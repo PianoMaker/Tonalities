@@ -1,14 +1,12 @@
-/// ВИЗНАЧЕННЯ НАЗВИ НОТИ (ЗА ЛАТИСНКЬИМ ПОЗНАЧЕННЯМ) #include <iostream>;
 #include <iostream>;
+
 using std::string;
 enum NOTES4 { DO, RE, MI, FA, SOL, LA, SI };
-
+/// Визначення назвии ноти (за лат. позлначенням)
 int key_to_pitch(string key, int notation)
 {
 	string note_as_written(key, 0, 1);
 	string n_acc(key, 1, 4);
-
-	/*cout << note_as_written << " (тест)\t";*/
 
 	int pitch, alteration;
 

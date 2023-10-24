@@ -1,5 +1,6 @@
 ﻿#include <iostream>
 #include "Tonalities.h"
+#include"messages.h"
 #pragma warning(disable:4996)
 using namespace std;
 
@@ -12,7 +13,7 @@ Tonalities::Tonalities(string msg, int notation)
 	{
 		mistake = false;
 		name = Enter(mistake, msg, notation);
-		if (mistake) cout << "incorrect tonality, try again" << endl;
+		if (mistake) Message(red,"incorrect tonality, try again\n");
 	} while (mistake);
 	char* temp = new char[name.length() + 1];
 	strcpy(temp, name.c_str());
@@ -32,7 +33,7 @@ Tonalities::Tonalities(string msg, int notation)
 
 void Tonalities::Show()
 {
-	cout << name << ", step = " << step << ", keys = " << keysignatures << endl;
+	Message(gray, name + ", step = " + to_string(step) + ", keys = " + to_string(keysignatures) + "\n");
 }
 
 void Tonalities::ShowName()
@@ -42,11 +43,11 @@ void Tonalities::ShowName()
 
 void Tonalities::ShowInBrackets()
 {
-	cout << "(" << name << ")";
+	Message(gray, "(" + name + ")");
 }
 
 
-
+// чи іденитчні?
 bool Tonalities::equal(Tonalities destination)
 {
 	if (keysignatures == destination.keysignatures && pitch == destination.pitch)
@@ -54,6 +55,7 @@ bool Tonalities::equal(Tonalities destination)
 	else return false;
 }
 
+//ступінь спорідненості
 bool Tonalities::relative(Tonalities destination)
 {
 	if (keysignatures == destination.keysignatures && step != destination.step)
@@ -78,6 +80,7 @@ void Tonalities::recount()
 	if (!minor)name[0] = toupper(name[0]);
 }
 
+//транспонування
 void Tonalities::transport(int model)
 {
 	switch (model)
@@ -104,6 +107,7 @@ void Tonalities::transport(int model)
 	recount();
 }
 
+//енгармонізація
 void Tonalities::enharmonize()
 {
 	if (keysignatures > 0)

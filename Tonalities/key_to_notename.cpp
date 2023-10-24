@@ -1,7 +1,7 @@
 #include <windows.h>
 #include <iostream>
 using std::string;
-
+//перетворює буквенне позначення на ноту українською
 string key_to_notename(string key, int notation = 1)
 {
 	string note_as_written(key, 0, 1);

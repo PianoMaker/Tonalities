@@ -1,11 +1,8 @@
-// ВИЗНАЧЕННЯ СТУПЕНЮ (ВІДНОСНО ДО)
-// введеної за клавіатури ноти 
-
 #include <iostream>;
 #include "Tonalities.h";
 using namespace std;
-
-
+// Втзначення ступеню (відносно "до")
+// введеної за клавіатури ноти 
 int key_to_step(string key, int notation = 1)
 {
 	string note_as_written(key, 0, 1);

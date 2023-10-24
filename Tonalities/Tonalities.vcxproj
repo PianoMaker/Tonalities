@@ -142,6 +142,7 @@
     <ClCompile Include="Tonalities.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="messages.h" />
     <ClInclude Include="Tonalities.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

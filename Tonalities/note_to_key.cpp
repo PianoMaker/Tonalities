@@ -92,6 +92,6 @@ string note_to_key(int step, int pitch)
 	if (key_to_notename == "hes") key_to_notename = "b";
 	if (key_to_notename == "heses") key_to_notename = "bes";
 	if (key_to_notename == "ees") key_to_notename = "es";
-
+	if (key_to_notename == "aes") key_to_notename = "as";
 	return key_to_notename;
 }

@@ -2,7 +2,9 @@
 #include <iostream>
 using namespace std;
 
+//Ноти
 enum NOTES1 { DO, RE, MI, FA, SOL, LA, SI };
+
 
 int addpitch(int pitch1, int pitch2);
 int addstep(int step1, int step2);
@@ -15,14 +17,15 @@ int pitch_to_alter(int step, int pitch);
 string Enter(bool &mistake, string msg, int notation);
 bool Trigger(string text);
 
-
+//Тональність
 class Tonalities
 {
 private:
+    
     string name; // cdur, amoll etc.
-    string key;
-    string mode;
-    string ukrname;
+    string key; // знаки біля ключа
+    string mode; // лад
+    string ukrname; // ім'яукраїнською
     int keysignatures; // key signatures, + sharps, - flats 
     int step; // key note, c=0, d=1 etc.
     int pitch; // key pitch, c = 0, cis = 1 etc.
@@ -30,11 +33,6 @@ private:
     bool minor; // true if minor.
 public:
     Tonalities(string name, int notation);
-    string GetName();
-    int GetSharpness();
-    int GetStep();
-    int GetPitch();
-    int GetAlteration();
     bool relative(Tonalities destination);
     bool equal(Tonalities destination);
     void enharmonize();
